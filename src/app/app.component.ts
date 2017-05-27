@@ -4,22 +4,7 @@ import { MyRemoteService } from './app.myremoteservice';
 // This component consumes the re-usable service.
 @Component({
     selector: 'my-app',
-    template: ` 
-                <!-- Submit feedback -->
-                Email: <input [(ngModel)]="emailAddress"><br/>
-                Feedback:  <input [(ngModel)]="feedbackMsg">
-                <button (click)="postFeedback()">Submit Feedback</button>
-
-                <!-- Show result from Post -->
-                <div *ngIf="feedbackResponseMsg">
-                    {{feedbackResponseMsg}}<br/>
-                    {{feedbackResponseStatus}}
-                </div> 
-                <br/>
-                <input [(ngModel)]="temprature">
-                <button (click)="convertToF()">Get Fahrenheit</button><br/>
-                <button (click)="convertToC()">Get Celsius</button><br/>
-    `,
+    templateUrl: './app.component.html',
     // Providers allow us to inject an object instance through the constructor.
     providers: [MyRemoteService]
 })

@@ -74,7 +74,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: " \n                <!-- Submit feedback -->\n                Email: <input [(ngModel)]=\"emailAddress\"><br/>\n                Feedback:  <input [(ngModel)]=\"feedbackMsg\">\n                <button (click)=\"postFeedback()\">Submit Feedback</button>\n\n                <!-- Show result from Post -->\n                <div *ngIf=\"feedbackResponseMsg\">\n                    {{feedbackResponseMsg}}<br/>\n                    {{feedbackResponseStatus}}\n                </div> \n                <br/>\n                <input [(ngModel)]=\"temprature\">\n                <button (click)=\"convertToF()\">Get Fahrenheit</button><br/>\n                <button (click)=\"convertToC()\">Get Celsius</button><br/>\n    ",
+        templateUrl: './app.component.html',
         // Providers allow us to inject an object instance through the constructor.
         providers: [app_myremoteservice_1.MyRemoteService]
     }),

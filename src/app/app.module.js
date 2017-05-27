@@ -13,6 +13,7 @@ var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
 var feedback_component_1 = require("./feedback/feedback.component");
 var app_routing_1 = require("./app-routing");
+var app_myremoteservice_1 = require("./app.myremoteservice");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,6 +32,7 @@ AppModule = __decorate([
             home_component_1.HomeComponent,
             feedback_component_1.FeedbackComponent
         ],
+        providers: [app_myremoteservice_1.MyRemoteService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -1,83 +1,9 @@
 import { Component } from '@angular/core';
-import { MyRemoteService } from './app.myremoteservice';
 
-// This component consumes the re-usable service.
+
 @Component({
     selector: 'my-app',
-    templateUrl: './app.component.html',
-    // Providers allow us to inject an object instance through the constructor.
-    providers: [MyRemoteService]
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
-    names: Array<any>;
-    remoteService: MyRemoteService;
-    temprature: string;
-    emailAddress: string;
-    feedbackMsg: string;
-    feedbackResponseMsg: string;
-    feedbackResponseStatus: string;
 
-    // Since using a provider above we can receive service.
-    constructor(_remoteService: MyRemoteService) {
-        this.remoteService = _remoteService;
-    }
-
-    convertToC() {
-        this.remoteService.getCelsius(this.temprature)
-            .subscribe(data => {
-                var temp = JSON.stringify(data);
-                console.log(temp);
-            });
-
-    }
-
-    convertToF() {
-        this.remoteService.getFahrenheit(this.temprature)
-            // Subscribe to observable.
-            .subscribe(
-            // Success.
-            data => {
-                this.names = data
-                console.log(JSON.stringify(data))
-                let x = data["Fahrenheit"];
-                let y = 0;
-                console.log("x:", x);
-            },
-            // Error.
-            error => {
-                alert(error)
-            },
-            // Final Instructions.
-            () => {
-                console.log("Finished")
-            });
-    }
-
-    postFeedback() {
-        // Create the JavaScript object in the format
-        // required by the server.
-        let FeedBackObject = {
-            "Email": this.emailAddress,
-            "Message": this.feedbackMsg
-        }
-
-        this.remoteService.postName(FeedBackObject)
-            // Subscribe to observable.
-            .subscribe(
-
-            // Success.
-            data => {
-                this.feedbackResponseMsg = data["Message"];
-                this.feedbackResponseStatus = data["Status"];
-                console.log(data)
-            },
-            // Error.
-            error => {
-                alert(error)
-            },
-            // Final instructions.
-            () => {
-                console.log("Finished")
-            });
-    }
-}
+export class AppComponent { }

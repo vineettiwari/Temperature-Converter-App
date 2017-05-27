@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AppRouting } from './app-routing';
+import { MyRemoteService } from './app.myremoteservice';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AppRouting } from './app-routing';
         HomeComponent,
         FeedbackComponent
     ],
+    providers: [MyRemoteService],
     bootstrap: [AppComponent]
 })
 
